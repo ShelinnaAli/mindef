@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(podman-compose up:*)",
+      "Bash(podman compose up:*)",
+      "Bash(podman ps:*)",
+      "Bash(podman logs:*)",
+      "Bash(podman exec:*)",
+      "Bash(curl:*)",
+      "Bash(podman-compose -f \"c:\\\\Users\\\\firma\\\\Documents\\\\GitHub\\\\mindef\\\\docker-compose.yml\" up -d --build)",
+      "Bash(podman compose:*)",
+      "Bash(docker-compose logs:*)",
+      "Bash(docker-compose ps:*)",
+      "Bash(docker-compose restart:*)",
+      "Bash(timeout 10 docker-compose logs:*)"
+    ]
+  }
+}
