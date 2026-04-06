@@ -1,19 +1,11 @@
 {
-    "env": {
-    "ANTHROPIC_AUTH_TOKEN": "ak_70c88b775141bd76cff74f376254f142379fdee47b1bf8bb",
-"ANTHROPIC_DEFAULT_OPUS_MODEL": "antigravity:claude-opus",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "antigravity:claude-sonnet",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "antigravity:claude-sonnet",
-    "ANTHROPIC_BASE_URL": "https://api-aigateway.gass.web.id",
-    "API_TIMEOUT_MS": "3000000"
-    },
-    "permissions": {
-    "allow": [],
-    "deny": []
-},"enabledPlugins": {
-    "example-skills@anthropic-agent-skills": true,
-    "navigator@navigator-marketplace": true
+"env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-awXAg4mFfv28i1QqM05",
+    "ANTHROPIC_BASE_URL": "https://debd8372e1b7.suuoss.com",
+
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "gpt-5.4",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "gpt-5.4",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "gpt-5.4"
 },
-"alwaysThinkingEnabled": true,
 "model": "opus"
 }
