@@ -57,7 +57,7 @@ services:
       args:
         NUXT_PUBLIC_API_BASE_URL: http://localhost:8080
         NUXT_API_INTERNAL_BASE_URL: http://nginx
-        NUXT_ENCRYPTION_KEY: base64:qa2GpVCb5OsHvNG4dOdtMDZ/wYObib4dtlSjAZr/W3k=
+        NUXT_ENCRYPTION_KEY: base64:BeSp9Y2vrBotBwa/+3JPU4pfz6Jh1bJTBBeJ0d+MAP8=
     container_name: exergame-frontend
     restart: unless-stopped
     ports:
@@ -71,7 +71,7 @@ services:
       - NUXT_PORT=3000
       - NUXT_PUBLIC_API_BASE_URL=http://localhost:8080
       - NUXT_API_INTERNAL_BASE_URL=http://nginx
-      - NUXT_ENCRYPTION_KEY=base64:qa2GpVCb5OsHvNG4dOdtMDZ/wYObib4dtlSjAZr/W3k=
+      - NUXT_ENCRYPTION_KEY=base64:BeSp9Y2vrBotBwa/+3JPU4pfz6Jh1bJTBBeJ0d+MAP8=
     networks:
       - exergame-network
 

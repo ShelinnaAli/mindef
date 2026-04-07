@@ -4,9 +4,8 @@ export default defineNuxtPlugin(() => {
 
 	// Define which API routes should be proxied through Nuxt server
 	const PROXIED_ROUTES = [
-		// '/api/auth/',
-		// '/api/user/',
-		// '/api/users/'
+		"/api/auth/",
+		"/api/app-settings/",
 	];
 
 	// Create a custom $fetch instance for direct Laravel backend calls

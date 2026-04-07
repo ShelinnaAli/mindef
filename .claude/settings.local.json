@@ -23,7 +23,14 @@
       "Bash(python -)",
       "Bash(node -)",
       "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/ProgrammeSchedule/StoreProgrammeScheduleRequest.php\")",
-      "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/ProgrammeSchedule/UpdateProgrammeScheduleRequest.php\")"
+      "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/ProgrammeSchedule/UpdateProgrammeScheduleRequest.php\")",
+      "Bash(php --version)",
+      "Bash(composer --version)",
+      "Bash(pnpm --version)",
+      "Bash(mysql --version)",
+      "Bash(npm --version)",
+      "Bash(npm --prefix \"/d/Project/mindef/exergame-frontend\" run build)",
+      "Bash(key)"
     ]
   }
 }

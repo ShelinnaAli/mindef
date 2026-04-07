@@ -4,8 +4,8 @@ export default defineEventHandler(async (event) => {
 
 	try {
 		const url = flag
-			? `${config.apiInternalBaseUrl}/app-settings/${flag}`
-			: `${config.apiInternalBaseUrl}/app-settings`;
+			? `${config.apiInternalBaseUrl}/api/app-settings/${flag}`
+			: `${config.apiInternalBaseUrl}/api/app-settings`;
 
 		const response = await $fetch(url, {
 			method: "GET",
