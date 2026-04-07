@@ -1,0 +1,57 @@
+.status-badge {
+	padding: 5px 12px;
+	border-radius: 20px;
+	font-size: 13px;
+	font-weight: 500;
+
+	&.status-active,
+	&.status-available,
+	&.status-confirmed {
+		background: rgba(75, 181, 67, 0.15);
+		color: var(--success);
+	}
+
+	&.status-pending,
+	&.status-full {
+		background: rgba(255, 204, 0, 0.15);
+		color: var(--warning);
+	}
+	&.status-cancelled,
+	&.status-full {
+		background: rgba(255, 159, 28, 0.15);
+		color: var(--accent);
+	}
+
+	&.status-inactive,
+	&.status-completed {
+		background: rgba(0, 0, 0, 0.1);
+	}
+}
+
+.role-admin {
+	background: rgba(111, 66, 193, 0.15);
+	color: var(--admin);
+}
+
+.role-trainer {
+	background: rgba(32, 201, 151, 0.15);
+	color: var(--trainer);
+}
+
+.role-user {
+	background: rgba(13, 110, 253, 0.15);
+	color: var(--user);
+}
+
+.badge-notif {
+	background: var(--error);
+	color: var(--light);
+	border-radius: 10px;
+	font-size: 75%;
+	padding: 2px;
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

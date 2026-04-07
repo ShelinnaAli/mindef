@@ -1,0 +1,28 @@
+.table-container {
+	overflow-x: auto;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	background: var(--card-bg);
+	min-width: 600px;
+}
+
+th,
+td {
+	padding: 10px;
+	text-align: left;
+	border-bottom: 1px solid var(--border);
+	color: var(--dark);
+}
+
+th {
+	background: rgba(26, 77, 46, 0.05);
+	font-weight: 600;
+	color: var(--secondary);
+}
+
+tr:hover {
+	background: rgba(26, 77, 46, 0.03);
+}

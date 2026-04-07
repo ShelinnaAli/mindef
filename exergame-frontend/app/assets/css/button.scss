@@ -1,0 +1,127 @@
+button {
+	background: var(--secondary);
+	color: var(--light);
+	padding: 0.9rem;
+	border: 1px solid var(--secondary);
+	border-radius: 8px;
+	font-size: 1rem;
+	width: auto;
+	cursor: pointer;
+	font-weight: 600;
+	transition:
+		transform 0.2s ease,
+		box-shadow 0.3s;
+	letter-spacing: 0.5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-transform: capitalize;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(26, 77, 46, 0.2);
+	}
+
+	&:disabled {
+		background: var(--gray);
+		color: var(--light);
+		cursor: not-allowed;
+		transform: none;
+		box-shadow: none;
+
+		&:hover {
+			background-color: var(--gray);
+		}
+	}
+}
+
+.btn {
+	padding: 10px 20px;
+	border-radius: 8px;
+	font-weight: 500;
+	cursor: pointer;
+	border: none;
+	transition: all 0.3s;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 5px 15px rgba(26, 77, 46, 0.2);
+	}
+}
+
+.btn-primary {
+	background: var(--secondary);
+	color: var(--light);
+	border: 1px solid var(--secondary);
+}
+
+.btn-outline {
+	background: transparent !important;
+	border: 1px solid var(--secondary) !important;
+	color: var(--secondary) !important;
+
+	&:hover {
+		background: rgba(26, 77, 46, 0.1) !important;
+	}
+}
+
+.btn-danger {
+	background: rgba(231, 76, 60, 0.15);
+	color: #e74c3c;
+	border: 1px solid #e74c3c;
+
+	&:hover {
+		box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+	}
+
+	&:disabled {
+		border: none;
+	}
+}
+
+.btn:disabled {
+	background: var(--gray);
+	cursor: not-allowed;
+	transform: none;
+	box-shadow: none;
+}
+
+@media (max-width: 992px) {
+	.btn {
+		width: auto;
+		font-size: 14px;
+		padding: 8px 15px;
+	}
+}
+
+@media (max-width: 576px) {
+	.btn {
+		padding: 8px 12px;
+		font-size: 13px;
+	}
+}
+
+.action-btn {
+	padding: 6px 12px;
+	border-radius: 6px;
+	font-size: 13px;
+	cursor: pointer;
+	border: 1px solid var(--border);
+	background: transparent;
+	color: var(--dark);
+	transition: all 0.2s;
+
+	&:hover {
+		background: var(--secondary);
+		color: var(--light);
+		border-color: var(--secondary);
+	}
+}
+
+.action-btn + .action-btn {
+	margin-left: 5px;
+}

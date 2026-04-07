@@ -1,0 +1,143 @@
+@use "@fortawesome/fontawesome-svg-core/styles.css";
+@use "./badge.scss";
+@use "./button.scss";
+@use "./calendar.scss";
+@use "./card.scss";
+@use "./form.scss";
+@use "./modal.scss";
+@use "./programme.scss";
+// @use "./tab.scss";
+@use "./table.scss";
+@use "./typography.scss";
+@use "./noty.scss";
+
+:root {
+	--primary: #ffffff;
+	--secondary: #1a4d2e;
+	--error: #dc3545;
+	--accent: #ff9f1c;
+	--success: #4bb543;
+	--warning: #ffcc00;
+	--light: #f8f9fa;
+	--dark: #343a40;
+	--gray: #6c757d;
+	--admin: #6f42c1;
+	--trainer: #20c997;
+	--user: #0d6efd;
+	--card-bg: rgba(255, 255, 255, 0.95);
+	--border: rgba(26, 77, 46, 0.1);
+}
+
+.animate__animated {
+	--animate-duration: 500ms !important;
+	animation-duration: 500ms !important;
+}
+
+body,
+html {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Roboto", sans-serif;
+	overflow: hidden;
+	color: var(--dark);
+	font-size: 14px;
+}
+
+.app-container {
+	position: relative;
+	height: 100vh;
+	width: 100vw;
+}
+
+.footer {
+	text-align: center;
+	padding: 20px;
+	color: var(--gray);
+	font-size: 12px;
+	border-top: 1px solid var(--border);
+}
+
+.section {
+	background: var(--card-bg);
+	border-radius: 12px;
+	padding: 20px 25px;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+	margin-bottom: 25px;
+	border: 1px solid var(--border);
+
+	.section-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 20px;
+		padding-bottom: 10px;
+		border-bottom: 1px solid var(--border);
+		flex-wrap: wrap;
+	}
+
+	.section-title {
+		font-family: "Montserrat", sans-serif;
+		font-weight: 600;
+		font-size: 18px;
+		color: var(--secondary);
+	}
+}
+
+.alert-warning {
+	background: rgba(255, 159, 28, 0.1);
+	border: 1px solid rgba(231, 76, 60, 0.3);
+	color: var(--accent) !important;
+	text-align: center;
+	border-radius: 5px;
+	padding: 5px 10px;
+
+	a {
+		color: var(--accent) !important;
+
+		&:hover {
+			font-weight: bold !important;
+		}
+	}
+}
+
+.loading-bar {
+	position: relative;
+	height: 3px;
+	background-color: #f3f4f6;
+	overflow: hidden;
+
+	.loading-progress {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		background: linear-gradient(90deg, var(--primary), var(--secondary));
+		animation: loading-slide 1.5s ease-in-out infinite;
+		width: 30%;
+	}
+}
+
+@keyframes loading-slide {
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(300%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@media (max-width: 768px) {
+	.section {
+		padding: 20px;
+
+		.section-header {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 10px;
+		}
+	}
+}

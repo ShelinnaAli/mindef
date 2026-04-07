@@ -1,0 +1,295 @@
+.schedule-table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 600px;
+	pointer-events: auto;
+
+	th,
+	td {
+		padding: 10px 5px;
+		text-align: center;
+		border: 1px solid var(--border);
+		font-size: 0.9rem;
+		color: var(--dark);
+		vertical-align: top;
+	}
+
+	th {
+		background-color: rgba(26, 77, 46, 0.05);
+		color: var(--secondary);
+		font-weight: 600;
+		min-width: 100px;
+	}
+
+	td {
+		&.schedule-slot-cell {
+			vertical-align: top;
+			padding: 5px;
+			height: 150px;
+
+			&.current-date {
+				background-color: #fef3c7; // Light yellow background for current date
+				border-color: #f59e0b; // Orange border for current date
+			}
+
+			&.past-date {
+				background-color: #f9fafb; // Light gray background for past dates
+				opacity: 0.6;
+
+				.day-number {
+					color: #9ca3af; // Gray color for past date numbers
+				}
+
+				.schedule-slot {
+					opacity: 0.5; // Dimmed sessions for past dates
+				}
+			}
+
+			.day-header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin-bottom: 0.5rem;
+
+				.day-number {
+					font-weight: 500;
+					color: var(--dark);
+
+					&.current-date-number {
+						color: #f59e0b; // Orange color for current date number
+						font-weight: 600;
+						background: #ffffff;
+						border-radius: 50%;
+						width: 24px;
+						height: 24px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+				}
+
+				.add-session-btn {
+					background: none;
+					border: 1px solid var(--border);
+					width: 100%;
+					height: 20px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					color: var(--secondary);
+					cursor: pointer;
+					font-size: 0.75rem;
+					opacity: 0.8;
+					transition: all 0.2s ease;
+					flex-shrink: 1;
+					margin: 0 10px;
+
+					&:hover {
+						opacity: 1;
+						background: var(--secondary);
+						color: var(--light);
+					}
+				}
+			}
+
+			// Individual day loading
+			.day-loading {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				padding: 0.5rem;
+				min-height: 60px;
+
+				.loading-spinner {
+					width: 20px;
+					height: 20px;
+					border: 2px solid #f3f4f6;
+					border-top: 2px solid var(--primary);
+					border-radius: 50%;
+					animation: spin 1s linear infinite;
+					margin-bottom: 0.25rem;
+				}
+
+				@keyframes spin {
+					0% {
+						transform: rotate(0deg);
+					}
+					100% {
+						transform: rotate(360deg);
+					}
+				}
+
+				.loading-text {
+					font-size: 0.75rem;
+					color: #6b7280;
+				}
+			}
+
+			.no-sessions {
+				text-align: center;
+				font-size: 0.75rem;
+				color: #9ca3af;
+				padding: 0.5rem;
+				font-style: italic;
+			}
+
+			.schedule-slot {
+				cursor: pointer;
+				padding: 8px;
+				border: 1px solid var(--border);
+				border-radius: 8px;
+				margin: 5px;
+				transition: all 0.2s ease;
+				background-color: var(--primary);
+				box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+				font-size: 0.85rem;
+				display: block;
+				line-height: 15px;
+
+				&:hover {
+					background-color: rgba(26, 77, 46, 0.1);
+				}
+
+				/* &.available {
+          background-color: rgba(75, 181, 67, 0.15);
+          color: #388e3c;
+          border: 1px solid var(--border);
+
+          &:hover {
+            background-color: rgba(26, 77, 46, 0.1);
+            border-color: var(--secondary);
+          }
+        } */
+
+				&.unavailable {
+					/* background-color: rgba(231, 76, 60, 0.1);
+					color: #c62828;
+					text-decoration: none;
+					cursor: not-allowed;
+					border: 1px solid rgba(231, 76, 60, 0.2); */
+					opacity: 0.5;
+					cursor: not-allowed;
+				}
+
+				&.selected {
+					background-color: var(--secondary);
+					color: var(--light) !important;
+					border-color: var(--secondary);
+					box-shadow: 0 4px 10px rgba(26, 77, 46, 0.2);
+
+					&:hover {
+						background-color: var(--secondary) !important;
+					}
+				}
+
+				&.cancelled {
+					background-color: rgba(255, 159, 28, 0.1);
+					color: var(--accent) !important;
+					text-decoration: line-through;
+
+					&:hover {
+						background-color: rgba(255, 159, 28, 0.1) !important;
+					}
+				}
+
+				&.not-allowed {
+					cursor: not-allowed;
+
+					&:hover {
+						background-color: var(--primary);
+					}
+				}
+				.slot-title {
+					font-weight: bold;
+				}
+
+				.slot-time {
+					font-size: 0.8rem;
+					color: var(--gray);
+				}
+
+				.difficulty,
+				.full {
+					font-size: 0.75rem;
+					font-weight: bold;
+				}
+
+				span {
+					display: block;
+				}
+
+				input[type="radio"] {
+					display: none;
+				}
+			}
+
+			.calendar-item-wrapper {
+				max-height: 120px;
+				overflow-y: auto;
+
+				/* Custom scrollbar styles */
+				&::-webkit-scrollbar {
+					width: 6px;
+				}
+
+				&::-webkit-scrollbar-track {
+					background-color: transparent;
+					border-radius: 3px;
+				}
+
+				&::-webkit-scrollbar-thumb {
+					background: transparent;
+					border-radius: 3px;
+					transition: background 0.2s ease;
+				}
+
+				&:hover::-webkit-scrollbar-thumb {
+					background: var(--secondary);
+					opacity: 0.7;
+				}
+
+				&:hover::-webkit-scrollbar-thumb:hover {
+					background: var(--secondary);
+					opacity: 1;
+				}
+
+				/* Firefox scrollbar - hidden by default */
+				scrollbar-width: none;
+
+				&:hover {
+					scrollbar-width: thin;
+					scrollbar-color: var(--secondary) transparent;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.schedule-table {
+		th,
+		td {
+			font-size: 0.8rem;
+			padding: 8px 3px;
+		}
+		.schedule-slot {
+			font-size: 0.8rem;
+			padding: 6px;
+
+			.difficulty {
+				font-size: 0.65rem;
+			}
+		}
+	}
+}
+
+@media (max-width: 480px) {
+	.schedule-table {
+		min-width: 400px;
+
+		.schedule-slot {
+			padding: 4px;
+		}
+	}
+}
