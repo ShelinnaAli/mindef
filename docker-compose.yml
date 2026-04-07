@@ -54,6 +54,10 @@ services:
     build:
       context: ./exergame-frontend
       dockerfile: Dockerfile
+      args:
+        NUXT_PUBLIC_API_BASE_URL: http://localhost:8080
+        NUXT_API_INTERNAL_BASE_URL: http://nginx
+        NUXT_ENCRYPTION_KEY: base64:qa2GpVCb5OsHvNG4dOdtMDZ/wYObib4dtlSjAZr/W3k=
     container_name: exergame-frontend
     restart: unless-stopped
     ports:
@@ -67,6 +71,7 @@ services:
       - NUXT_PORT=3000
       - NUXT_PUBLIC_API_BASE_URL=http://localhost:8080
       - NUXT_API_INTERNAL_BASE_URL=http://nginx
+      - NUXT_ENCRYPTION_KEY=base64:qa2GpVCb5OsHvNG4dOdtMDZ/wYObib4dtlSjAZr/W3k=
     networks:
       - exergame-network
 

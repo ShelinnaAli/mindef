@@ -20,7 +20,10 @@
       "Bash(node -e \"const fs=require\\('fs'\\); new Function\\(fs.readFileSync\\('d:/Project/mindef/exergame-frontend/app/composables/useUser.js','utf8'\\)\\); console.log\\('useUser.js syntax ok'\\)\")",
       "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/User/AddUserRequest.php\")",
       "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/User/UpdateUserRequest.php\")",
-      "Bash(python -)"
+      "Bash(python -)",
+      "Bash(node -)",
+      "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/ProgrammeSchedule/StoreProgrammeScheduleRequest.php\")",
+      "Bash(php -l \"d:/Project/mindef/exergame-backend/app/Http/Requests/ProgrammeSchedule/UpdateProgrammeScheduleRequest.php\")"
     ]
   }
 }
